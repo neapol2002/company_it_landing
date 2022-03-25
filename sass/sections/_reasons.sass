@@ -1,0 +1,172 @@
+.reasons
+  +resp-val(padding-bottom, 10, 6)
+
+  +md-min($bp-xs)
+    padding-top: 11rem
+  +md-min($bp-sm)
+    padding-top: 12.4rem
+  +md-min($bp-md)
+    padding-top: 17.4rem
+  +md-min($bp-xl)
+    padding-top: 25rem
+
+  @extend %animated-scrolling
+
+  // .reasons__container
+  &__container
+    max-width: $container-large + px
+
+  // .reasons__body
+  &__body
+    max-width: 51rem
+    & > *:last-child
+      margin-bottom: 0
+
+    +md-min($bp-lg)
+      position: relative
+      &::after
+        content: ''
+        position: absolute
+        top: -12%
+        right: -75rem
+
+        +box(140%)
+        +bgi('reasons/reasons__illustration.png', contain)
+        +bgi_webp('reasons/reasons__illustration')
+
+  // .reasons__title
+  &__title
+    margin-bottom: 2rem
+
+  // .reasons__text
+  &__text
+    margin-bottom: 3.3rem
+    max-width: 45rem
+    font-size: 1.8rem
+
+    +md-max($bp-sm)
+      margin-bottom: 2.3rem
+      max-width: 40rem
+      font-size: 1.6rem
+
+  // .reasons__buttons
+  &__buttons
+    margin-bottom: 5.3rem
+
+    .button
+      margin: .7rem 0
+
+      &:not(:last-child)
+        margin-right: 1.725rem
+
+    +md-max($bp-sm)
+      margin-bottom: 3.3rem
+      .button
+        min-width: 13.6rem
+
+  // .reasons__preview
+  &__preview
+    +md-max($bp-sm)
+      max-width: 30rem
+    +md-min($bp-sm)
+      display: flex
+      align-items: center
+
+  // .reasons__video
+  &__video
+    display: flex
+    justify-content: center
+    align-items: center
+    flex: 1 0 14rem
+    +box(14rem, 8rem)
+
+    cursor: pointer
+    border-radius: 0.4rem
+    background-color: #361c5d
+
+    span
+      +box(4rem)
+      font-size: 0
+      color: transparent
+      border-radius: 50%
+      background-color: $white
+      +trs
+
+      &::after
+        content: ''
+        display: inline-block
+        transform: translate(1.6rem, .95rem)
+
+        border:
+          style: solid
+          width: 1rem 0 1rem 1.2rem
+          color: transparent transparent transparent #361c5d
+
+    &:not(:last-child)
+      margin-right: 2rem
+
+    .no-touch &:hover span
+      transform: scale(1.15)
+
+    +md-max($bp-sm)
+      &:not(:last-child)
+        margin-bottom: 1.5rem
+
+  // .reasons__description
+  &__description
+    & > *:last-child
+      margin-bottom: 0
+
+  // .reasons__preview-text
+  &__preview-text
+    margin-bottom: .7rem
+    font: 400 1.6rem / 1.4 'ff-rubik'
+
+  // .reasons__watch
+  &__watch
+    font-size: 1.4rem
+    color: #6d6d78
+    +trs
+
+    .no-touch &:hover
+      color: $primary
+
+  // .reasons__modal
+  &__modal
+    display: none
+
+    position: fixed
+    top: 0
+    left: 0
+    z-index: $zindex-modal
+    +box(100%)
+
+    background-color: rgba($black, .7)
+
+    @media (orientation: landscape)
+      padding:
+        right: 7rem
+        left: 7rem
+
+  // .reasons__modal-video
+  &__modal-video
+    position: relative
+    margin: auto
+    max-width: 70rem
+    width: 100%
+    border-radius: .4rem
+    overflow: hidden
+
+    &::after
+      content: ''
+      display: block
+      padding-top: 56.25%
+
+  // .reasons__modal-iframe
+  &__modal-iframe
+    position: absolute
+    top: 0
+    left: 0
+
+    +box(100%)
+    border: 0

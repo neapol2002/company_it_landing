@@ -1,0 +1,49 @@
+//===== Basic settings:
+body
+  min-width: $body-miw + px
+
+ul
+  margin-bottom: 0
+  padding-left: 0
+  li
+    list-style: none
+
+button
+  border: none
+
+input,
+button,
+select,
+textarea
+  font-weight: inherit
+  -webkit-appearance: none
+  border-radius: 0
+
+input,
+button,
+textarea
+  &:focus
+    outline: none
+
+::placeholder
+  color: rgba($white, .2)
+
+:focus::placeholder
+  color: transparent
+
+::selection
+  color: $white
+  background-color: $accent
+
+// Scrollbar customization for WebKit browsers:
+@media (any-hover: hover)
+  ::-webkit-scrollbar
+    width: 1.5rem
+
+  ::-webkit-scrollbar-track
+    background-color: $body-color
+
+  ::-webkit-scrollbar-thumb
+    background-color: $primary
+    border-radius: .8rem
+    border: .3rem solid $body-color

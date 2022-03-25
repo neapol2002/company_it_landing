@@ -1,0 +1,59 @@
+.choise
+  +resp-val(padding-bottom, 15, 6)
+
+  @extend %animated-scrolling
+
+  // .choise__header
+  &__header
+    margin-bottom: 5rem
+    text-align: center
+    > *:last-child
+      margin-bottom: 0
+
+    p
+      font-size: 1.6rem
+
+  // .choise__title
+  &__title
+    margin-bottom: 1.3rem
+
+  // .choise__inner
+  &__inner
+    +md-min($bp-xs)
+      position: relative
+      z-index: $zindex-section
+      display: grid
+      row-gap: 3.5rem
+      grid-template-columns: 290px
+      justify-content: center
+    @media (min-width: 668px)
+      gap: 4.5rem 5rem
+      grid-template-columns: repeat(2, 290px)
+    +md-min($bp-lg)
+      grid-template-columns: repeat(3, auto)
+
+  // .choise__item
+  &__item
+    display: flex
+
+  // .choise__icon
+  &__icon
+    margin-right: 2.8rem
+
+    img
+      +box(2.4rem)
+
+  // .choise__description
+  &__description > *:last-child
+    margin-bottom: 0
+
+  // .choise__name
+  &__name
+    margin-bottom: 1rem
+
+    font: 700 1.8rem 'ff-gilroy', sans-serif
+    color: $primary
+
+  // .choise__text
+  &__text
+    font-size: 1.4rem

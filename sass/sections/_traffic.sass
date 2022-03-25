@@ -1,0 +1,139 @@
+.traffic
+  +resp-val(padding-bottom, 24, 6)
+  +md-max($bp-sm)
+    padding-bottom: 60px
+
+  @extend %animated-scrolling
+
+  // .traffic__inner
+  &__inner
+    position: relative
+    z-index: $zindex-section
+    display: flex
+    justify-content: space-around
+
+    +md-max($bp-lg)
+      justify-content: space-between
+      max-width: 800px
+      margin: 0 auto
+    +md-max($bp-md)
+      display: block
+
+  // .traffic__item-1
+  &__item-1
+    > *:last-child
+      margin-bottom: 0
+
+    +md-max($bp-md)
+      margin-bottom: 5rem
+      text-align: center
+
+    +md-min($bp-md)
+      flex-basis: 465px
+      max-width: 465px
+      padding:
+        top: 5.5rem
+        right: 2rem
+
+  // .traffic__title
+  &__title
+    margin-bottom: 3.2rem
+
+    +md-max($bp-md)
+      margin-bottom: 2.2rem
+
+  // .traffic__text
+  &__text
+    margin-bottom: 4.3rem
+    line-height: 1.87
+
+    +md-max($bp-lg)
+      max-width: 280px
+    +md-max($bp-md)
+      margin: 0 auto 3rem
+      max-width: 360px
+      line-height: 1.5
+
+  // .traffic__item-2
+  &__item-2
+    flex-basis: 285px
+
+  // .traffic__stats
+  &__stats
+    position: relative
+    max-width: 285px
+
+    +md-max($bp-md)
+      margin: 0 auto
+
+    &::before,
+    &::after
+      content: ''
+      position: absolute
+
+      +md-max($bp-sm)
+        display: none
+
+    &::before
+      z-index: 7
+      bottom: 0
+      left: 3.7rem
+      transform: translateY(50%)
+      +box(31.5%, 22.5%)
+
+      border-radius: .8rem
+      background-color: #13c296
+      +bgi('traffic/path.svg', 50%)
+      box-shadow: -16.0895px 24.1342px 36.6483px rgba(19, 194, 150, 0.24)
+
+    &::after
+      right: -15%
+      bottom: -19%
+      z-index: 3
+      +box(55%)
+
+      +bgi('traffic/traffic__illustration.svg', contain)
+
+  // .traffic__chart
+  &__chart
+    max-width: 236px
+    margin: 0 auto
+    padding: 30px 27px
+
+    border-radius: .8rem
+    background-color: #1d2067
+
+    +md-min($bp-sm)
+      position: absolute
+      top: 1.8rem
+      z-index: 7
+      transform: translateX(-47%)
+
+  // .traffic__chart-inner
+  &__chart-inner
+    display: flex
+    justify-content: space-between
+
+    &:not(:last-child)
+      margin-bottom: 1.5rem
+
+  // .traffic__chart-name
+  &__chart-name
+    font: 600 1.5rem 'ff-montserrat', sans-serif
+
+    &:not(:last-child)
+      margin-right: 2rem
+
+  // .traffic__chart-month
+  &__chart-month
+    align-self: flex-end
+    font: 1rem / 1.7 'ff-opensans', sans-serif
+
+  // .traffic__image
+  &__image
+    position: relative
+    z-index: 5
+    border-radius: 10px
+
+    +md-max($bp-sm)
+      display: none

@@ -1,0 +1,30 @@
+.startup
+  padding-bottom: 5rem
+
+  +md-max($bp-sm)
+    padding-bottom: 2rem
+
+  @extend %animated-scrolling
+
+  // .startup__header
+  &__header
+    position: relative
+    z-index: $zindex-section
+    max-width: 800px
+    margin: 0 auto
+
+    text-align: center
+
+    > *:last-child
+      margin-bottom: 0
+
+  // .startup__title
+  &__title
+    margin-bottom: 4.5rem
+
+    +md-max($bp-sm)
+      margin-bottom: 3.5rem
+
+  // .startup__illustration
+  &__illustration
+    +resp-val(margin-top, -13.5, 2)

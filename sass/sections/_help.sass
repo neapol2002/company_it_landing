@@ -1,0 +1,148 @@
+.help
+  +resp-val(padding-bottom, 19, 6)
+
+  @extend %animated-scrolling
+
+  // .help__container
+  &__container
+    position: relative
+
+  // .help__illustration
+  &__illustration
+    position: absolute
+    right: -20rem
+    bottom: 0
+    opacity: .2
+
+    animation: movingLines_03 4s ease-out infinite
+
+    +md-max($bp-xl)
+      display: none
+
+  // .help__inner
+  &__inner
+    +md-min($bp-lg)
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+  // .help__item-1
+  &__item-1
+    flex-basis: 374px
+
+    +md-max($bp-lg)
+      display: none
+
+  // .help__image
+  &__image
+    max-width: 374px
+    position: relative
+
+    img
+      position: relative
+      z-index: 5
+
+    &::after
+      content: ''
+      position: absolute
+      top: -29%
+      left: -21%
+      z-index: 3
+      +box(135%)
+
+      +bgi('help/help__illustration.svg', contain)
+
+  // .help__item-2
+  &__item-2
+    position: relative
+    z-index: $zindex-section
+    max-width: 500px
+
+    +md-max($bp-lg)
+      margin: 0 auto
+      text-align: center
+
+    +md-min($bp-lg)
+      flex-basis: 500px
+
+  // .help__info
+  &__info
+    margin-bottom: 4.8rem
+
+    > *:last-child
+      margin-bottom: 0
+
+    +md-max($bp-sm)
+      margin-bottom: 3.4rem
+
+  // .help__title
+  &__title
+    margin-bottom: 3.2rem
+
+    +md-max($bp-sm)
+      margin-bottom: 2.2rem
+
+  // .help__text
+  &__text
+    max-width: 41rem
+    letter-spacing: .02rem
+
+    +md-max($bp-lg)
+      margin: 0 auto
+
+  // .help__features
+  &__features
+    +md-min($bp-sm)
+      display: flex
+      justify-content: space-between
+
+  // .help__features-item
+  &__features-item
+    > *:last-child
+      margin-bottom: 0
+
+    +md-max($bp-sm)
+      margin: 0 auto
+      max-width: 215px
+
+      &:first-child
+        margin-bottom: 3rem
+
+    +md-min($bp-sm)
+      flex-basis: 215px
+
+      &:first-child
+        flex-basis: 235px
+        padding-right: 20px
+
+  // .help__features-icon
+  &__features-icon
+    display: block
+    margin-bottom: 2rem
+
+    img
+      +box(3.6rem)
+
+  // .help__features-name
+  &__features-name
+    margin-bottom: 1rem
+
+    font-family: 'ff-inter'
+    font-weight: 700
+    letter-spacing: .02rem
+    color: $primary
+
+  // .help__features-text
+  &__features-text
+    letter-spacing: .02rem
+
+// keyframes for .help__illustration
+@keyframes movingLines_03
+  0%
+    opacity: 0
+    transform: translate(0)
+  15%
+    opacity: .2
+  100%
+    transform: translate(-30%, 15%)
+    opacity: 0

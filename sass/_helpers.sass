@@ -1,0 +1,52 @@
+//===== Extentions:
+%container
+  width: 100%
+  max-width: $container-maw + px
+  margin:
+    right: auto
+    left: auto
+  padding:
+    right: 1.5rem
+    left: 1.5rem
+  +md-max($bp-sm)
+    padding:
+      right: 1rem
+      left: 1rem
+
+%s-padd
+  padding:
+    top: $s-padd + rem
+    bottom: $s-padd + rem
+
+%animated-scrolling
+  opacity: 0
+  +trs(opacity, 1.25s)
+  transition-delay: .3s
+
+  &.anim-item--is-active
+    opacity: 1
+
+
+//===== Extra classes:
+.container
+  @extend %container
+
+.img-fluid
+  display: block
+  max-width: 100%
+  height: auto
+
+.img-bg
+  display: block
+  width: 100%
+  height: 100%
+  object-fit: cover
+
+.page
+  position: relative
+  background: $gradient
+
+.page,
+.of-hidden,
+.no-scroll
+  overflow: hidden

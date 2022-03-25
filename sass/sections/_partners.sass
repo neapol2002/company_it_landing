@@ -1,0 +1,56 @@
+.partners
+  +resp-val(padding-bottom, 10, 6)
+
+  @extend %animated-scrolling
+
+  // .partners__container
+  &__container
+    position: relative
+
+  // .partners__illustrations
+  &__illustration-1,
+  &__illustration-2
+    position: absolute
+    opacity: .2
+
+    animation: movingLines_01 4s ease-out infinite
+
+    +md-max($bp-xl)
+      display: none
+
+  &__illustration-1
+    top: -12rem
+    left: -21rem
+  &__illustration-2
+    top: -10rem
+    right: -19.2rem
+
+  // .partners__inner
+  &__inner
+    +md-min($bp-xs)
+      position: relative
+      z-index: $zindex-section
+      display: grid
+      gap: 3.5rem 1.5rem
+      justify-items: center
+    @media (min-width: 375px)
+      grid-template-columns: repeat(2, auto)
+    +md-min($bp-sm)
+      grid-template-columns: repeat(3, auto)
+    +md-min($bp-lg)
+      grid-template-columns: repeat(6, auto)
+
+  // .partners__item
+  &__item
+    opacity: .3
+
+// keyframes for .partners__illustrations
+@keyframes movingLines_01
+  0%
+    opacity: 0
+    transform: translateY(0)
+  15%
+    opacity: .2
+  100%
+    transform: translateY(15%)
+    opacity: 0

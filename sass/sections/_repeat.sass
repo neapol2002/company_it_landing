@@ -1,0 +1,131 @@
+//===== Repeating elements:
+
+// .hamburger
+.hamburger
+  display: none
+  font-size: 0
+  text-align: left
+
+  +md-max($bp-md)
+    display: block
+    position: relative
+    z-index: $zindex-hamburger
+    grid-row: 1
+
+
+// .button
+.button
+  display: inline-flex
+  justify-content: center
+  align-items: center
+
+  min-width: 15.7rem
+  height: 4.7rem
+  padding: 0 1.5em
+
+  font: 500 1.2rem 'ff-rubik', sans-serif
+  text-transform: uppercase
+  letter-spacing: .2rem
+  color: $white
+  border-radius: .3rem
+  background-color: $accent
+  box-shadow: -11.09px 18.13px 36.6483px rgba(242, 153, 74, 0.13)
+  +trs(background-color)
+
+  .no-touch &:hover
+    background-color: darken($accent, 10)
+
+  // .button--transparent
+  &--transparent
+    color: $accent
+    border-radius: .4rem
+    border: .1rem solid $accent
+    background-color: transparent
+    box-shadow: none
+    +trs
+
+    .no-touch &:hover
+      color: $primary
+      border-color: $primary
+      background-color: transparent
+
+  // .button--small
+  &--small
+    min-width: 11.2rem
+    height: 3.6rem
+
+    +md-max($bp-sm)
+      min-width: 13rem
+      height: 4.6rem
+
+  // .button--big
+  &--big
+    min-width: 16.4rem
+    height: 5.4rem
+
+  // .button--send
+  &--send
+    min-width: 12.8rem
+    height: 5.6rem
+    border-radius: 0 .5rem .5rem 0
+    box-shadow: none
+
+    +md-max($bp-sm)
+      border-radius: .5rem
+
+
+// .title
+.title
+  font-family: 'ff-inter', sans-serif
+  +resp-val(font-size, 4.2, 3)
+  font-weight: 700
+  line-height: 1.19
+  color: $primary
+
+  span
+    color: $accent
+
+  // .title--main
+  &--main
+    +resp-val(font-size, 4.4, 3.6, $container-large)
+    line-height: 1.13
+
+  // .title--small
+  &--small
+    +resp-val(font-size, 3.6, 2.8, $container-large)
+    line-height: 1.16
+    letter-spacing: .33px
+
+  // .title--xsmall
+  &--xsmall
+    font-size: 2.6rem
+    letter-spacing: .0325rem
+
+
+// .toTop-button
+.toTop-button
+  position: fixed
+  right: -12rem
+  bottom: 2rem
+  z-index: $zindex-toTop-button
+
+  display: flex
+  justify-content: center
+  align-items: center
+  +box(4.5rem)
+
+  opacity: .7
+  border-radius: 1rem
+  background-color: #8476aa
+  +trs()
+
+  &.is-active
+    right: 2rem
+
+  .no-touch &:hover
+    opacity: 1
+    cursor: pointer
+
+  img
+    +box(3rem)
+    transform: translateX(-.1rem)

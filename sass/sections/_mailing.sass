@@ -1,0 +1,112 @@
+.mailing
+  +resp-val(padding-bottom, 12, 0, $container-large)
+
+  @extend %animated-scrolling
+
+  // .mailing__container
+  &__container
+    position: relative
+
+  // .mailing__illustration
+  &__illustration
+    position: absolute
+    top: -5rem
+    left: -50%
+
+    animation: movingLines_04 4s ease-out infinite
+
+    +md-max($bp-xl)
+      display: none
+
+  // .mailing__inner
+  &__inner
+    position: relative
+    z-index: $zindex-section
+    > *:last-child
+      margin-bottom: 0
+
+    max-width: 940px
+    margin:
+      right: 30px
+      left: 30px
+    padding: 50px
+
+    text-align: center
+
+    border-radius: .5rem
+    background-color: #191b51
+
+    +md-max($bp-md)
+      margin:
+        right: 15px
+        left: 15px
+      padding: 50px 15px
+    +md-max($bp-sm)
+      margin: 0
+      padding: 30px 10px
+
+  // .mailing__title
+  &__title
+    margin-bottom: 2rem
+
+    font-family: 'ff-rubik', sans-serif
+    +resp-val(font-size, 3.6, 2.8, $container-large)
+    font-weight: 500
+    color: $accent
+
+  // .mailing__text
+  &__text
+    max-width: 40rem
+    margin: 0 auto 2.3rem
+
+    font: 1.6rem / 1.4'ff-rubik', sans-serif
+    color: #95a1bb
+
+  // .mailing__form
+  &__form
+    margin-bottom: 1.6rem
+
+    +md-min($bp-sm)
+      display: flex
+      justify-content: center
+
+  // .mailing__form-input
+  &__form-input
+    flex-basis: 30rem
+    height: 5.6rem
+    padding: 1.6rem
+
+    font: 400 1.4rem 'ff-inter', sans-serif
+    color: $primary
+
+    border: none
+    border-radius: .5rem 0 0 .5rem
+    background-color: #2f3162
+    +trs(background-color)
+
+    &:focus
+      background-color: lighten(#2f3162, 5)
+
+    +md-max($bp-sm)
+      display: block
+      width: 100%
+      max-width: 40rem
+      margin: 0 auto 2rem
+
+      border-radius: .5rem
+
+  // .mailing__note
+  &__note
+    font-size: 1.4rem
+    letter-spacing: .02rem
+
+// keyframes for .mailing__illustration
+@keyframes movingLines_04
+  0%
+    opacity: .25
+    transform: scale(.8)
+  50%
+    opacity: 1
+  100%
+    transform: scale(1)
+    opacity: 0

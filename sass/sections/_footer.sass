@@ -1,0 +1,133 @@
+.footer
+  padding-top: 4.6rem
+  +resp-val(padding-bottom, 10, 4)
+
+  +bgi('footer/footer__illustration.svg', cover, top center)
+
+  +md-max($bp-xl)
+    background: none
+
+  @extend %animated-scrolling
+
+  // .footer__inner
+  &__inner
+    +resp-val(margin-bottom, 8.6, 3.6)
+
+    +md-max($bp-sm)
+      text-align: center
+
+    +md-min($bp-sm)
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+  // .footer__logo
+  &__logo
+    display: block
+
+    font: 700 2.6rem 'ff-inter', sans-serif
+    letter-spacing: .032rem
+    color: $accent
+
+    +md-max($bp-sm)
+      &:not(:last-child)
+        margin-bottom: 1.5rem
+
+  // .footer__social-link
+  &__social-link
+    display: inline-block
+    +box(4rem)
+
+    line-height: 4rem
+    text-align: center
+
+    border-radius: 50%
+    background-color: #272857
+    +trs(background-color)
+
+    .no-touch &:hover
+      background-color: lighten(#272857, 10)
+
+    &:not(:last-child)
+      margin-right: 1.1rem
+
+    img
+      +box(1.2rem)
+
+  // .footer__nav
+  &__nav
+    display: none
+
+    +md-min($bp-sm)
+      display: grid
+      gap: 5rem 1.5rem
+      justify-items: center
+      grid-template-columns: repeat(2, auto)
+
+      +resp-val(margin-bottom, 12, 3)
+
+    +md-min($bp-md)
+      grid-template-columns: repeat(4, auto)
+      justify-content: space-between
+
+  // .footer__list-item
+  &__list-item
+    font-weight: 400
+
+    &:not(:last-child)
+      margin-bottom: 1.6rem
+    &:first-child
+      margin-bottom: 2.5rem
+      font-weight: 700
+
+  // .footer__list-link
+  &__list-link
+    position: relative
+
+    font-family: 'ff-inter', sans-serif
+    letter-spacing: .02rem
+    color: $white
+    +trs(color, .15s, linear)
+
+    &::after
+      content: ''
+      position: absolute
+      bottom: -.5rem
+      left: 0
+      +box(100%, .15rem)
+
+      background-color: transparent
+      +trs(background-color, .15s, linear)
+
+    .no-touch &:hover
+      color: $primary
+    .no-touch &:hover::after
+      background-color: $primary
+
+  // .footer__copy-list
+  &__copy-list
+    text-align: center
+
+    +md-min($bp-sm)
+      display: flex
+      justify-content: center
+
+  // .footer__copy-item
+  &__copy-item
+    +md-max($bp-sm)
+      &:not(:last-child)
+        margin-bottom: 1.2rem
+
+    +md-min($bp-sm)
+      &:not(:last-child)
+        margin-right: 3.4rem
+
+  // .footer__copy-link
+  &__copy-link
+    font: 400 1.4rem 'ff-inter', sans-serif
+    letter-spacing: .02rem
+    color: #8d8d8d
+    +trs(color)
+
+    .no-touch &:hover
+      color: $primary

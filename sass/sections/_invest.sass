@@ -1,0 +1,188 @@
+.invest
+  +resp-val(padding-bottom, 19, 12)
+
+  @extend %animated-scrolling
+
+  // .invest__inner
+  &__inner
+    display: flex
+    justify-content: space-around
+
+    +md-max($bp-lg)
+      justify-content: space-between
+      margin: 0 auto
+      max-width: 800px
+    +md-max($bp-md)
+      display: block
+
+  // .invest__item-1
+  &__item-1
+    > *:last-child
+      margin-bottom: 0
+
+    +md-max($bp-md)
+      margin-bottom: 5rem
+      text-align: center
+
+    +md-min($bp-md)
+      flex-basis: 465px
+      max-width: 465px
+      padding:
+        top: 5.5rem
+        right: 2rem
+
+  // .invest__title
+  &__title
+    margin-bottom: 3.2rem
+
+    +md-max($bp-md)
+      margin-bottom: 2.2rem
+
+  // .invest__text
+  &__text
+    margin-bottom: 4.3rem
+    line-height: 1.87
+
+    +md-max($bp-md)
+      margin: 0 auto 3rem
+      max-width: 360px
+      line-height: 1.5
+
+  // .invest__item-2
+  &__item-2
+    position: relative
+    flex-basis: 260px
+    max-width: 260px
+    align-self: start
+
+    +md-max($bp-md)
+      margin: 0 auto
+
+    &::after
+      content: ''
+      position: absolute
+      top: 18px
+      right: -422px
+      +box(818px, 461px)
+
+      +bgi('invest/invest__illustration.png', contain)
+      +bgi_webp('invest/invest__illustration')
+
+      +md-max($bp-sm)
+        background: none
+
+  // .invest__card
+  &__card
+    max-width: 260px
+    overflow: hidden
+
+    border-radius: 10px
+
+    &::before
+      content: ''
+      position: absolute
+      z-index: 9
+      top: 12rem
+      left: -3rem
+      +box(6rem)
+
+      border-radius: .6rem
+      background-color: #13c296
+      +bgi('../img/traffic/path.svg', 50%)
+      box-shadow: -16.0895px 24.1342px 36.6483px rgba(19, 194, 150, 0.24)
+
+      +md-max($bp-sm)
+        top: 9rem
+        left: -1.5rem
+
+  // .invest__card-body
+  &__card-image
+    position: relative
+    z-index: 3
+
+  // .invest__card-body
+  &__card-body
+    position: relative
+    z-index: $zindex-section
+    padding: 2.2rem 3rem
+    background-color: $white
+
+    > *:last-child
+      margin-bottom: 0
+
+  // .invest__card-name
+  &__card-name
+    margin-bottom: .25rem
+
+    font: 600 1.6rem 'ff-montserrat', sans-serif
+    color: #212b36
+
+  // .invest__card-text
+  &__card-text
+    margin-bottom: 2.2rem
+
+    font: 400 1rem 'ff-opensans', sans-serif
+    letter-spacing: .05rem
+    color: #637381
+
+  // .invest__card-sum
+  &__card-sum
+    margin-bottom: .5rem
+
+    font: 500 2.4rem 'ff-montserrat', sans-serif
+    color: #13c296
+
+  // .invest__card-sum-name
+  &__card-sum-name
+    margin-bottom: 2rem
+
+    font: 600 1rem 'ff-opensans', sans-serif
+    text-transform: uppercase
+    letter-spacing: .05rem
+    color: #98a4af
+
+  // .invest__card-stats
+  &__card-stats
+    display: flex
+    justify-content: space-between
+    padding-top: 1.5rem
+
+    border-top: .1rem solid #d6dbdf
+
+  // .invest__card-item
+  &__card-item
+    font: 600 1.4rem 'ff-montserrat', sans-serif
+    line-height: 1
+    color: #212b36
+
+    span
+      display: block
+
+      font: 400 1rem 'ff-opensans', sans-serif
+      letter-spacing: .05rem
+      color: #637381
+
+  // .invest__card-month
+  &__card-month
+    position: absolute
+    right: -11.3rem
+    bottom: 10rem
+    z-index: 3
+    padding: 1.5rem 3rem
+
+    font: 600 1.6rem / 1.35 'ff-montserrat', sans-serif
+    color: $white
+    border-radius: 1rem
+    background-color: #516ea9
+
+    +md-max($bp-xl)
+      right: 2rem
+      bottom: -4.7rem
+      padding: 1rem 1.8rem 1rem
+
+    span
+      display: block
+
+      font: 400 1rem 'ff-opensans', sans-serif
+      letter-spacing: .05rem
+      color: rgba($white, .7)

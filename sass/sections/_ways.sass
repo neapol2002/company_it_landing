@@ -1,0 +1,82 @@
+.ways
+  +resp-val(padding-bottom, 17, 6)
+
+  @extend %animated-scrolling
+
+  // .ways__container
+  &__container
+    position: relative
+
+  // .ways__illustration
+  &__illustration
+    position: absolute
+    bottom: 0
+    left: -20rem
+    opacity: .2
+
+    animation: movingLines_02 4s ease-out infinite
+
+    +md-max($bp-xl)
+      display: none
+
+  // .ways__header
+  &__header
+    position: relative
+    z-index: $zindex-section
+    max-width: 700px
+    margin: 0 auto 4.8rem
+    text-align: center
+
+    > *:last-child
+      margin-bottom: 0
+
+    p
+      max-width: 420px
+      margin: 0 auto
+      letter-spacing: .02rem
+
+  // .ways__title
+  &__title
+    margin-bottom: 3.2rem
+
+  // .ways__inner
+  &__inner
+    position: relative
+    z-index: $zindex-section
+    display: grid
+    gap: 3.5rem 1.5rem
+    grid-template-columns: 190px 280px 200px
+    justify-content: space-around
+
+    +md-max($bp-md)
+      grid-template-columns: 220px
+      justify-content: center
+
+  // .ways__item
+  &__item
+    text-align: center
+
+    > *:last-child
+      margin-bottom: 0
+
+    p
+      letter-spacing: .02rem
+
+  // .ways__number
+  &__number
+    display: block
+    margin-bottom: 1.6rem
+
+    font: 700 3.6rem 'ff-inter', sans-serif
+    color: $primary
+
+// keyframes for .ways__illustration
+@keyframes movingLines_02
+  0%
+    opacity: 0
+    transform: translate(0)
+  15%
+    opacity: .2
+  100%
+    transform: translate(20%, -20%)
+    opacity: 0
